@@ -1,2 +1,2 @@
 #!/bin/bash
-ex +3p -scq iacta
+awk 'NR==5' iacta
