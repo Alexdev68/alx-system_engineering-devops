@@ -1,5 +1,2 @@
 #!/bin/bash
-func ()
-{
-local BEST=School
-}
+BEST=School
