@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script displays content of the current directory and removes all character before the hyphen of a file
+list="$(ls)"
+for i in $list; do
+	modified="${i#*-}"
+	echo "$modified"
+done

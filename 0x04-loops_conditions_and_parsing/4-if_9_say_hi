@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times and displays Hi at the 9th index
+i=0
+while [ $i -lt 10 ]; do
+	echo "Best School"
+	if [ $i -eq 8 ]; then
+		echo "Hi"
+	fi
+	((i+=1))
+done
