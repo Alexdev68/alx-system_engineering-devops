@@ -3,7 +3,7 @@
 pid=$(pidof -s "4-to_infinity_and_beyond")
 
 if [[ -n "$pid" ]]; then
-	kill -15 "$pid"
+	kill "$pid"
 	echo "Terminated"
 else
 	echo "Not running"
