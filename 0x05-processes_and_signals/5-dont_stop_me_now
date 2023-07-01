@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # This script terminates the 4-to_infinity_and_beyond process
-kill -15 17708
+pid=$(pidof -s "4-to_infinity_and_beyond")
+kill -15 "$pid"
