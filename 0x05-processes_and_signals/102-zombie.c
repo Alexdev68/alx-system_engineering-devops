@@ -7,8 +7,9 @@ int infinite_while(void);
 
 /**
  * main - This function creates zombie processes
+ * Return: This function returns 0
  */
-void main(void)
+int main(void)
 {
 	int i = 0;
 
@@ -29,6 +30,8 @@ void main(void)
 		i += 1;
 	}
 	infinite_while();
+
+	return (0);
 }
 
 /**
