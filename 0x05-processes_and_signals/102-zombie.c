@@ -11,7 +11,6 @@ int infinite_while(void);
 void main(void)
 {
 	int i = 0;
-	pid_t parentpid = getpid();
 
 	while (i < 5)
 	{
@@ -19,7 +18,7 @@ void main(void)
 
 		if (child_pid > 0)
 		{
-			printf("Zombie process created, PID: %d\n", parentpid + i + 1);
+			printf("Zombie process created, PID: %d\n", child_pid);
 			sleep(1);
 		}
 
