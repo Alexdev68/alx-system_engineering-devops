@@ -8,12 +8,12 @@ case "$1" in
 		echo "manage_my_process started"
 		;;
 	stop)
-		pkill -3 -f "manage_my_process"
+		pkill -15 -f "manage_my_process"
 		rm /var/run/my_process.pid
 		echo "manage_my_process stopped"
 		;;
 	restart)
-		pkill -3 -f "manage_my_process"
+		pkill -15 -f "manage_my_process"
                 rm /var/run/my_process.pid
 		./manage_my_process &
                 echo "$!" > /var/run/my_process.pid
