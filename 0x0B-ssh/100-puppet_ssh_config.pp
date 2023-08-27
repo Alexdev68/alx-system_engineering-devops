@@ -9,5 +9,5 @@ match => '^	PasswordAuthentication',
 
 file_line { 'IdentityFile':
 path => '/etc/ssh/ssh_config',
-line => '	IdentityFile /etc/ssh/school'
+line => '	IdentityFile ~/.ssh/school'
 }
