@@ -4,4 +4,4 @@
 old_string='server_name _;'
 new_string='server_name _;\n\trewrite ^\/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;'
 
-sed -i "s/$old_string/$new_string/" /etc/nginx/sites-available/default
+sed -i "s#$old_string#$new_string#" /etc/nginx/sites-available/default
