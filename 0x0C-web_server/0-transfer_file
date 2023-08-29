@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # This is a script that transfers a file from our client to a server
-
-echo <<EOF > ~/.ssh/config
+cat <<EOF > ~/.ssh/config
 Host *
 StrictHostKeyChecking no
 EOF
