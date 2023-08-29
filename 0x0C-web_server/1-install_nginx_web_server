@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# This script installs and configures Nginx
+
+sudo apt-get update
+sudo apt-get install nginx -y
+
+cat <<EOF > /var/www/html/ThePage
+Hello World!
+EOF
+
+sudo tee /etc/nginx/sites-available/default <<EOF
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /var/www/html;
+        index ThePage;
+
+        location / {
+                try_files \$uri \$uri/ =404;
+        }
+}
+EOF
+
+sudo service nginx restart
