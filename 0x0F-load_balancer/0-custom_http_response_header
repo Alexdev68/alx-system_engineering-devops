@@ -1,8 +1,28 @@
 #!/usr/bin/env bash
-# This script adds custom headers to two webservers
+# This script adds custom headers to two web servers
 
-web_01='http://ubuntu@52.91.126.140'
-web_02='http://ubuntu@54.160.83.162'
+s1_name='03-web-01'
+s1_ip='52.91.126.140'
 
-curl -X GET -H "X-Served-By: 03-web-01" "$web_01"
-curl -X GET -H "X-Served-By: 03-web-02" "$web_02"
+s2_name='03-web-02'
+s2_ip='54.160.83.162'
+
+config() {
+	local name="$1"
+	local ip="$2"
+
+	ssh ubuntu@"$ip" <<EOF
+		sudo vi /etc/nginx/sites-available/default
+		
+		location / {
+			add_header X-Served-By "$name"
+		}
+
+		sudo nginx -t
+		
+		sudo service nginx restart
+EOF
+}
+
+config "$s1_name" "$s1_ip"
+config "$s2_name" "$s2_ip"
