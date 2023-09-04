@@ -1,0 +1,2 @@
+# Load balancer
+A load balancer is a network device or software application that distributes incoming network traffic (such as web requests, network packets, or application traffic) across multiple servers or resources to ensure efficient utilization, high availability, and reliability of the system. Load balancing is a fundamental component of modern network infrastructure, particularly in web services and applications that require scalability and redundancy.

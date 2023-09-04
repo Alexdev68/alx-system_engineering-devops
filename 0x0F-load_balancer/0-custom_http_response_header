@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script adds custom headers to two webservers
+
+web_01='http://ubuntu@52.91.126.140'
+web_02='http://ubuntu@54.160.83.162'
+
+curl -X GET -H "X-Served-By: 03-web-01" "$web_01"
+curl -X GET -H "X-Served-By: 03-web-02" "$web_02"
