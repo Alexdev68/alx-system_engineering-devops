@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script is the same as the previous one but it makes say that nginx is not running service (init)
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
+sudo systemctl stop nginx
