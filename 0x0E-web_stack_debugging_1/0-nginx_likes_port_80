@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # This script fixes a server that can't connect and listen on port 
-
 sudo cp /etc/nginx/sites-available/defaulf /etc/nginx/sites-enabled/default
 sudo service nginx restart
