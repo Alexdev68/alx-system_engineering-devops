@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# This script configures my domain zone
+
+function domain_config() {
+	local domain="$1"
+	local sub="$2"
+
+	record_type=$(dig "$sub.$domain" | grep -A1 'ANSWER SECTION:' | awk '{print $2}')
+
+	ip=$(dig "$sub.$domain" | grep -A1 'ANSWER SECTION:' | awk '{print $5}')
+
+	echo "The subdomain $sub is a $record_type record and points to $ip"
+}
+
+if [ -n "$2" ]; then
+	domain_config "$1" "$2"
+else
+	subs="www lb-01 web-01 web-02"
+
+	for sub in $subs; do
+		domain_config "$1" "$sub"
+	done
+fi
