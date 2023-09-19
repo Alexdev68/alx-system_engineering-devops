@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script runs software as another user
+
+if [ $# -ge 1 ]; then
+	sudo -u "$1" whoami
+	exit 1
+fi
