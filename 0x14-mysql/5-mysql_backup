@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script creates amysql backup
+
+if [ $# -ge 1 ]; then
+	mysqldump -u root -p"$1" --all-databases backup.sql
+	tar -czvf "$(date +%d-%m-%Y)".tar.gz backup.sql
+fi
