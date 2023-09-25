@@ -12,10 +12,10 @@ def get_employees_todos(id):
     url = 'https://jsonplaceholder.typicode.com'
 
     with request.urlopen(f'{url}/todos?userId={id}') as response:
-        todos = json.loads(response.read().decode('utf-8'))
+        todos = json.loads(response.read())
 
         with request.urlopen(f'{url}/users/{id}') as response:
-            user_info = json.loads(response.read().decode('utf-8'))
+            user_info = json.loads(response.read())
             Name = user_info.get('name')
 
         completed = [todo for todo in todos if todo['completed']]
@@ -25,7 +25,7 @@ def get_employees_todos(id):
         print(f'Employee {Name} is done with tasks({n_comp}/{tot_num}):')
 
         for to in completed:
-            print(f'     {to["title"]}')
+            print(f'\t {to["title"]}')
 
 
 if __name__ == '__main__':
