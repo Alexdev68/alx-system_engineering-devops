@@ -14,18 +14,18 @@ def get_employees_todos(id):
     with request.urlopen(f'{url}/todos?userId={id}') as response:
         todos = json.loads(response.read().decode('utf-8'))
 
-    with request.urlopen(f'{url}/users/{id}') as response:
-        user_info = json.loads(response.read().decode('utf-8'))
-        Name = user_info.get('name')
+        with request.urlopen(f'{url}/users/{id}') as response:
+            user_info = json.loads(response.read().decode('utf-8'))
+            Name = user_info.get('name')
 
-    completed = [todo for todo in todos if todo['completed']]
-    n_comp = len(completed)
-    tot_num = len(todos)
+        completed = [todo for todo in todos if todo['completed']]
+        n_comp = len(completed)
+        tot_num = len(todos)
 
-    print(f'Employee {Name} is done with tasks({n_comp}/{tot_num}):')
+        print(f'Employee {Name} is done with tasks({n_comp}/{tot_num}):')
 
-    for to in completed:
-        print(f'\t {to["title"]}')
+        for to in completed:
+            print(f'\t {to["title"]}')
 
 
 if __name__ == '__main__':
