@@ -25,7 +25,7 @@ def get_employees_todos(id):
         print(f'Employee {Name} is done with tasks({n_comp}/{tot_num}):')
 
         for to in completed:
-            print(f'\t{to["title"]}')
+            print(f'     {to["title"]}')
 
 
 if __name__ == '__main__':
